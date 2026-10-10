@@ -1,8 +1,8 @@
-# Sistema de Gestión para Biblioteca (API REST & Web MVC)
+# Sistema de Gestión para Biblioteca (API REST)
 
 ## Descripción del Proyecto
 
-Esta aplicación es una plataforma integral construida en Spring Boot diseñada para la administración completa de una biblioteca. Su arquitectura de acceso dual ofrece tanto una **API RESTful** para clientes externos, como una **Interfaz Web (MVC)** para la interacción directa desde el navegador. El sistema se divide en tres módulos principales:
+Esta aplicación es una plataforma integral construida en Spring Boot diseñada para la administración completa de una biblioteca. Su arquitectura ofrece una **API RESTful** para la interacción y consumo de datos mediante clientes externos. El sistema se divide en tres módulos principales:
 
 *   **Módulo de Inventario (`/libros`):** Encargado de la gestión del catálogo. Permite la adición de nuevas obras, modificación de sus datos (como cantidad de ejemplares), eliminación y búsqueda especializada por autor.
 *   **Módulo de Miembros (`/usuarios`):** Administra el registro y seguimiento de los socios de la biblioteca. Proporciona funciones para dar de alta nuevos usuarios, actualizar su información de contacto, consultar registros mediante correo o nombre y darlos de baja del padrón.
@@ -14,7 +14,6 @@ Esta aplicación es una plataforma integral construida en Spring Boot diseñada 
 *   **Framework Principal:** Spring Boot
 *   **Mapeo Objeto-Relacional (ORM):** Spring Data JPA / Hibernate
 *   **Motor de Base de Datos:** MySQL
-*   **Renderizado de Vistas (Frontend local):** Thymeleaf (Controladores web)
 
 ## Guía de Instalación y Ejecución
 
@@ -71,27 +70,11 @@ spring.jpa.show-sql=true
 * `PUT /prestamos/{id}/devolver`: Consolida el retorno de un libro al acervo.
 * `DELETE /prestamos/{id}`: Suprime un registro de préstamo.
 
-### Interfaz Gráfica (Vistas HTML)
-
-Si deseas navegar por la aplicación mediante interfaz web, puedes acceder a las siguientes rutas desde el navegador:
-
-* `GET /vista/libros` (Pantalla de inventario)
-
-
-* `GET /vista/usuarios` (Pantalla de miembros)
-
-
-* `GET /vista/prestamos` (Pantalla de control de préstamos)
-
-
-
 ---
 
 ## Muestras de Peticiones y Respuestas (Payloads)
 
 ### A. Registro de una Obra Literaria (POST `/libros`)
-
-### 1. Registrar un Libro (POST `/libros`)
 
 **Formato de envío (JSON):**
 
@@ -201,5 +184,9 @@ Si deseas navegar por la aplicación mediante interfaz web, puedes acceder a las
   "fechaPrestamo": "2026-10-08T01:15:00",
   "fechaDevolucion": null
 }
+
+```
+
+```
 
 ```
